@@ -43,3 +43,44 @@ The following packages were updated:
   com.unity.render-pipelines.universal from version 14.0.3 to 14.0.11
   com.unity.timeline from version 1.7.1 to 1.7.6
   com.unity.visualscripting from version 1.7.8 to 1.9.4
+
+=== Fri Aug 30 19:18:20 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.analytics from version 3.6.11 to 3.8.1
+  com.unity.burst from version 1.6.1 to 1.8.17
+  com.unity.ide.rider from version 3.0.7 to 3.0.31
+  com.unity.inputsystem from version 1.2.0 to 1.7.0
+  com.unity.postprocessing from version 3.2.0 to 3.4.0
+  com.unity.test-framework from version 1.1.29 to 1.1.33
+  com.unity.timeline from version 1.4.8 to 1.7.6
+
+=== Fri Aug 30 19:18:20 2024
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.2d.sprite@1.0.0
+  com.unity.2d.tilemap@1.0.0
+  com.unity.analytics@3.8.1
+  com.unity.burst@1.8.17
+  com.unity.inputsystem@1.7.0
+  com.unity.postprocessing@3.4.0
+
+=== Fri Aug 30 19:22:36 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.analytics from version 3.6.11 to 3.8.1
+  com.unity.burst from version 1.6.1 to 1.8.17
+  com.unity.ide.rider from version 3.0.7 to 3.0.31
+  com.unity.inputsystem from version 1.2.0 to 1.7.0
+  com.unity.postprocessing from version 3.2.0 to 3.4.0
+  com.unity.test-framework from version 1.1.29 to 1.1.33
+  com.unity.timeline from version 1.4.8 to 1.7.6
