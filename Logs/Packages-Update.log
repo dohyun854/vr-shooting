@@ -1,5 +1,5 @@
 
-=== Fri Aug 30 17:59:11 2024
+=== Sun Sep 15 14:51:46 2024
 
 Packages were changed.
 Update Mode: mergeDefaultDependencies
@@ -37,50 +37,9 @@ The following packages were added:
   com.unity.modules.wind@1.0.0
   com.unity.modules.xr@1.0.0
 The following packages were updated:
-  com.unity.collab-proxy from version 1.17.2 to 2.4.4
-  com.unity.ide.rider from version 3.0.15 to 3.0.31
-  com.unity.ide.visualstudio from version 2.0.16 to 2.0.22
-  com.unity.render-pipelines.universal from version 14.0.3 to 14.0.11
-  com.unity.timeline from version 1.7.1 to 1.7.6
-  com.unity.visualscripting from version 1.7.8 to 1.9.4
-
-=== Fri Aug 30 19:18:20 2024
-
-Packages were changed.
-Update Mode: updateDependencies
-
-The following packages were updated:
-  com.unity.analytics from version 3.6.11 to 3.8.1
-  com.unity.burst from version 1.6.1 to 1.8.17
-  com.unity.ide.rider from version 3.0.7 to 3.0.31
-  com.unity.inputsystem from version 1.2.0 to 1.7.0
-  com.unity.postprocessing from version 3.2.0 to 3.4.0
-  com.unity.test-framework from version 1.1.29 to 1.1.33
-  com.unity.timeline from version 1.4.8 to 1.7.6
-
-=== Fri Aug 30 19:18:20 2024
-
-Packages were changed.
-Update Mode: mergeDefaultDependencies
-
-The following packages were added:
-  com.unity.2d.sprite@1.0.0
-  com.unity.2d.tilemap@1.0.0
-  com.unity.analytics@3.8.1
-  com.unity.burst@1.8.17
-  com.unity.inputsystem@1.7.0
-  com.unity.postprocessing@3.4.0
-
-=== Fri Aug 30 19:22:36 2024
-
-Packages were changed.
-Update Mode: updateDependencies
-
-The following packages were updated:
-  com.unity.analytics from version 3.6.11 to 3.8.1
-  com.unity.burst from version 1.6.1 to 1.8.17
-  com.unity.ide.rider from version 3.0.7 to 3.0.31
-  com.unity.inputsystem from version 1.2.0 to 1.7.0
-  com.unity.postprocessing from version 3.2.0 to 3.4.0
-  com.unity.test-framework from version 1.1.29 to 1.1.33
-  com.unity.timeline from version 1.4.8 to 1.7.6
+  com.unity.collab-proxy from version 2.0.4 to 2.4.4
+  com.unity.render-pipelines.universal from version 14.0.7 to 14.0.11
+  com.unity.timeline from version 1.7.4 to 1.7.6
+  com.unity.visualscripting from version 1.8.0 to 1.9.4
+  com.unity.xr.management from version 4.3.3 to 4.4.0
+  com.unity.xr.openxr from version 1.8.2 to 1.12.0
