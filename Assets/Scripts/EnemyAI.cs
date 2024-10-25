@@ -1,24 +1,20 @@
 using UnityEngine;
-using UnityEngine.AI;
 
-public class EnemyAI : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
-    public Transform player; // 플레이어 오브젝트
-    public float detectionRange = 10f;
-    private NavMeshAgent agent;
+    public float speed = 3f;
+    public Transform player;
 
-    void Start()
+    private void Update()
     {
-        agent = GetComponent<NavMeshAgent>();
-    }
-
-    void Update()
-    {
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distanceToPlayer < detectionRange)
+        if (player != null)
         {
-            agent.SetDestination(player.position);
+            Vector3 direction = (player.position - transform.position).normalized;
+            transform.position += direction * speed * Time.deltaTime;
+        }
+        else
+        {
+            Debug.LogError("Object not set");
         }
     }
 }
