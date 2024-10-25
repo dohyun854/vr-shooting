@@ -15,10 +15,7 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        if (distanceToPlayer < detectionRange)
-        {
-            agent.SetDestination(player.position);
+        agent.SetDestination(player.position);
         }
-    }
+    
 }
