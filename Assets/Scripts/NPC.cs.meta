@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 178d8366aa1616849b91b66285c51454
+<<<<<<<< HEAD:Assets/Scripts/NPC.cs.meta
+guid: 0ee271594090dc642ae9bb887ca687b1
+========
+guid: 8b9b2f63f75714647a7d1fca8b76cfab
+>>>>>>>> dohyun854:Assets/Scripts/EnemyAI.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
