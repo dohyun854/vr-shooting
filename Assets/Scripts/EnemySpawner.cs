@@ -10,7 +10,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        // 스폰을 주기적으로 실행
         StartCoroutine(SpawnEnemy());
     }
 
@@ -20,7 +19,6 @@ public class EnemySpawner : MonoBehaviour
         {
             Vector3 spawnPosition = player.position + (Quaternion.Euler(0, Random.Range(-45, 45), 0) * Vector3.forward * spawnDistance);
             Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-
             yield return new WaitForSeconds(spawnInterval);
         }
     }

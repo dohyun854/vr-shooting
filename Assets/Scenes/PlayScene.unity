@@ -122,6 +122,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &298998402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 298998404}
+  - component: {fileID: 298998403}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &298998403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298998402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bbb6ab30f73e54897a51683ab1e084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 756471629}
+  player: {fileID: 879576320}
+  spawnDistance: 10
+  spawnInterval: 3
+--- !u!4 &298998404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 298998402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.469295, y: -2.8347707, z: 15.271362}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &617329396
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +218,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: ad185357351a2e8429f67cbda00f8f54, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 4307c0646f488504dbb1fc92fcd00d7c, type: 2}
 --- !u!65 &617329398
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -312,8 +360,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9b2f63f75714647a7d1fca8b76cfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 3
   player: {fileID: 879576320}
-  detectionRange: 10
 --- !u!136 &756471632
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -801,3 +849,4 @@ SceneRoots:
   - {fileID: 617329401}
   - {fileID: 756471635}
   - {fileID: 879576320}
+  - {fileID: 298998404}

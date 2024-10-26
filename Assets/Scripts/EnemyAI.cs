@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Object not set");
+            Debug.LogError("Player object not set.");
         }
     }
 }
