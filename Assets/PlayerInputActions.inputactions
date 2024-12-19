@@ -1,0 +1,34 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "XRcontroller",
+            "id": "adfa9c10-d54f-433d-89ed-8090b1449776",
+            "actions": [
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "cd24b114-ab71-4aed-a386-0316f482f8bc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "310220a7-7335-494e-910d-d9e61d212ba9",
+                    "path": "<QuestTouchPlusController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
