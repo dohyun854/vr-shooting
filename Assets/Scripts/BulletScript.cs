@@ -22,6 +22,7 @@ public class BulletScript : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             // 적에게 데미지 처리
+            Debug.Log("충돌");
             Destroy(other.gameObject);
             Destroy(gameObject); // 총알 소멸
         }
