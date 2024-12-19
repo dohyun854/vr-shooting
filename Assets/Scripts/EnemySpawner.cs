@@ -38,6 +38,8 @@ public class EnemySpawner : MonoBehaviour
 
             enemy.GetComponent<Enemy>().SetSpeed(currentEnemySpeed);
 
+            enemy.SetActive(true);
+
             yield return new WaitForSeconds(currentSpawnInterval);
         }
     }
@@ -51,8 +53,6 @@ public class EnemySpawner : MonoBehaviour
 
             currentSpawnInterval = Mathf.Max(0.5f, currentSpawnInterval * spawnSpeedMultiplier);
             currentEnemySpeed *= enemySpeedMultiplier;
-
-            Debug.Log("Level Up! Level: " + level);
         }
     }
 }
