@@ -619,7 +619,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.67
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
       propertyPath: m_LocalPosition.y
@@ -627,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.438
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
       propertyPath: m_LocalRotation.w
@@ -868,6 +868,8 @@ GameObject:
   - component: {fileID: 879576319}
   - component: {fileID: 879576318}
   - component: {fileID: 879576317}
+  - component: {fileID: 879576321}
+  - component: {fileID: 879576322}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
