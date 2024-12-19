@@ -1,0 +1,65 @@
+{
+    "name": "PlayerInputActions",
+    "maps": [
+        {
+            "name": "XRcontroller",
+            "id": "adfa9c10-d54f-433d-89ed-8090b1449776",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "03ba0844-6969-4cd9-b976-89ef3290298d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Fire",
+                    "type": "Button",
+                    "id": "cd24b114-ab71-4aed-a386-0316f482f8bc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "230f2def-1cac-4767-a547-ed3a5499bd75",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "310220a7-7335-494e-910d-d9e61d212ba9",
+                    "path": "<XRController>{RightHand}/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "29b1dd76-af79-4443-b21d-e61adfb2e735",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
