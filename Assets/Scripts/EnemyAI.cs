@@ -8,8 +8,8 @@ public class Enemy : MonoBehaviour
     public float attackDistance = 2f;
     private Animator animator;
     private bool isAttacking = false;
-    public int maxHp = 1;
-    private int currentHp;
+    public float maxHp = 1;
+    private float currentHp;
     private bool isDead = false;
 
     private void Start()
@@ -30,6 +30,11 @@ public class Enemy : MonoBehaviour
     public void SetSpeed(float newSpeed)
     {
         speed = newSpeed;
+    }
+
+    public void SetmaxHp(float newmaxHP)
+    {
+        maxHp = newmaxHP;
     }
 
     void OnCollisionEnter(Collision collision)

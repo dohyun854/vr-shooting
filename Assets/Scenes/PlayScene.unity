@@ -157,7 +157,8 @@ MonoBehaviour:
   spawnInterval: 3
   levelUpInterval: 10
   spawnSpeedMultiplier: 0.9
-  enemySpeedMultiplier: 1.1
+  enemySpeedMultiplier: 1.2
+  enemyHpMultiplier: 1.1
 --- !u!4 &48010671
 Transform:
   m_ObjectHideFlags: 0

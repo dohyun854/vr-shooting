@@ -10,10 +10,12 @@ public class EnemySpawner : MonoBehaviour
     public float levelUpInterval = 10f;
     public float spawnSpeedMultiplier = 0.9f;
     public float enemySpeedMultiplier = 1.1f;
+    public float enemyHpMultiplier = 1.1f;
 
     private int level = 1;
     private float currentSpawnInterval;
     private float currentEnemySpeed;
+    private float currentmaxHp;
 
     private void Start()
     {
@@ -31,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
             Enemy enemyScript = enemy.GetComponent<Enemy>();
-            enemyScript.player = player;  // 플레이어를 적에게 할당
+            enemyScript.player = player;
 
             Vector3 directionToPlayer = (player.position - spawnPosition).normalized;
             directionToPlayer = Vector3.ProjectOnPlane(directionToPlayer, Vector3.up);
@@ -40,6 +42,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.rotation = rotationToPlayer;
 
             enemyScript.SetSpeed(currentEnemySpeed);
+            enemyScript.SetmaxHp(currentmaxHp);
 
             enemy.SetActive(true);
 
@@ -56,6 +59,7 @@ public class EnemySpawner : MonoBehaviour
 
             currentSpawnInterval = Mathf.Max(0.5f, currentSpawnInterval * spawnSpeedMultiplier);
             currentEnemySpeed *= enemySpeedMultiplier;
+            currentmaxHp *= enemyHpMultiplier;
         }
     }
 }
