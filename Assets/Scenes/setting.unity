@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 644235292}
   - component: {fileID: 644235291}
   m_Layer: 5
-  m_Name: Text
+  m_Name: UserName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1700,7 +1700,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 644235289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1709,7 +1709,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 25921.031, y: 8772.025}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644235291
@@ -1734,15 +1734,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c7edaa7351d84244fbf9318a61b9c6cf, type: 2}
+  m_sharedMaterial: {fileID: 5212236946440969592, guid: c7edaa7351d84244fbf9318a61b9c6cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 805509304}
   - component: {fileID: 805509303}
   m_Layer: 5
-  m_Name: InputField (TMP)
+  m_Name: UserNameInputField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4044,6 +4044,7 @@ GameObject:
   - component: {fileID: 1968786631}
   - component: {fileID: 1968786630}
   - component: {fileID: 1968786629}
+  - component: {fileID: 1968786634}
   - component: {fileID: 1968786632}
   m_Layer: 5
   m_Name: Button
@@ -4128,6 +4129,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
+      - m_Target: {fileID: 1968786634}
+        m_TargetAssemblyTypeName: store, Assembly-CSharp
+        m_MethodName: SaveUserNametoPrefs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1968786630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4178,6 +4191,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2756073f5e44e0408d27274e89f7cbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1968786634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1968786627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a663b60e3db0784e80265f370edfcf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UserNameInputField: {fileID: 805509303}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
