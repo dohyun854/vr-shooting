@@ -8,9 +8,12 @@ public class Score : MonoBehaviour
 {
     public TMP_Text text;
     int score = 0;
+    public static string username;
+    string UsernameFromPrefs = PlayerPrefs.GetString("Username",username);
     
     private void Start()
     {
+        
         SetText();
     }
     
@@ -22,7 +25,7 @@ public class Score : MonoBehaviour
     
     public void SetText()
     {
-        text.text = "Score : " + score.ToString();
+        text.text = "Score : " + UsernameFromPrefs;
     }
 
 }
