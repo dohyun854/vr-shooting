@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float attackDistance = 2f;
     private Animator animator;
     private bool isAttacking = false;
+    private bool isDead = false;
     public int maxHp = 1;
     private int currentHp;
 
@@ -30,7 +31,7 @@ public class Enemy : MonoBehaviour
         speed = newSpeed;
     }
 
-     void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bullet"))
         {
@@ -51,15 +52,18 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        if (isDead) return; // 이미 죽은 상태면 더 이상 처리하지 않음
+
+        isDead = true;
         speed = 0;
         animator.SetTrigger("Die");
         Debug.Log("적 처치됨!");
-
-        // Destroy(gameObject);
     }
 
     private void Update()
     {
+        if (isDead) return; // 죽은 상태에서는 더 이상 업데이트 하지 않음
+
         if (!isAttacking)
         {
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
