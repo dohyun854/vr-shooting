@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 412e160a399ac466eaa5bf94c9f9f207
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rightHandTransform: {fileID: 5686134208185136530, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
+  - leftHandTransform: {fileID: 109434732395451517, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
+  - rightGrip: {fileID: 8343704675199803476, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
+  - leftGrip: {fileID: -4226156463210825400, guid: 531b9d27c3b8540aaa27a00e590a4928, type: 3}
+  - gunCenter: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
