@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public Text text;
+    public TMP_Text text;
     int score = 0;
     
     private void Start()
