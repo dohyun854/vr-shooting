@@ -9,6 +9,10 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("start");
     }
+    public void playSceneChange()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
 
     public void settingSceneChange()
     {
