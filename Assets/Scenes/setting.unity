@@ -3467,7 +3467,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1968786632}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
-        m_MethodName: playSceneChange
+        m_MethodName: GameOverSceneChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3551,7 +3551,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a663b60e3db0784e80265f370edfcf6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UserNameInputField: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
