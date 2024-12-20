@@ -18,4 +18,8 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("setting");
     }
+    public void GameOverSceneChange()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }
