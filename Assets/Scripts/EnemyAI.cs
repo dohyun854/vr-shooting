@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;
     public Transform player;
     private Animator animator;
+    private bool isAttacking = false;
 
     private void Start()
     {
@@ -18,6 +19,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (isAttacking) return;
+
         if (player != null)
         {
             Vector3 direction = (player.position - transform.position).normalized;
@@ -28,9 +31,19 @@ public class Enemy : MonoBehaviour
                 animator.SetFloat("Speed", speed);
             }
         }
-        else
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
-            Debug.LogError("Player object not set.");
+            isAttacking = true;
+            speed = 0;
+
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+            }
         }
     }
 }
