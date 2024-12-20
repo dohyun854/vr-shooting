@@ -37,5 +37,6 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("적 처치됨!");
+        Destroy(gameObject);
     }
 }
