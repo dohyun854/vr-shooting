@@ -30,13 +30,16 @@ public class EnemySpawner : MonoBehaviour
             Vector3 spawnPosition = player.position + (Quaternion.Euler(0, Random.Range(-45, 45), 0) * Vector3.forward * spawnDistance);
             GameObject enemy = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
 
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            enemyScript.player = player;  // 플레이어를 적에게 할당
+
             Vector3 directionToPlayer = (player.position - spawnPosition).normalized;
             directionToPlayer = Vector3.ProjectOnPlane(directionToPlayer, Vector3.up);
 
             Quaternion rotationToPlayer = Quaternion.LookRotation(directionToPlayer);
             enemy.transform.rotation = rotationToPlayer;
 
-            enemy.GetComponent<Enemy>().SetSpeed(currentEnemySpeed);
+            enemyScript.SetSpeed(currentEnemySpeed);
 
             enemy.SetActive(true);
 
