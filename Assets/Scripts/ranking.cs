@@ -1,22 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Ranking : MonoBehaviour
 {
     private float[] bestScore = new float[5];
     private string[] bestName = new string[5];
+    public TMP_Text RankNameText;
+    public TMP_Text RankScoreText;
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Sample call to UpdateRanking for testing
         UpdateRanking(100f, "Player1");
+        showRankingFunction();
     }
 
     public void UpdateRanking(float currentScore, string currentName)
     {
-        // Save the current player's score and name
+        
         PlayerPrefs.SetString("CurrentPlayerName", currentName);
         PlayerPrefs.SetFloat("CurrentPlayerScore", currentScore);
 
@@ -25,11 +27,11 @@ public class Ranking : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            // Load existing scores and names
-            bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore", 0f);
-            bestName[i] = PlayerPrefs.GetString(i + "BestName", "");
+            
+            bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
+            bestName[i] = PlayerPrefs.GetString(i + "BestName");
 
-            // Update ranking if the current score is higher
+            
             if (bestScore[i] < currentScore)
             {
                 tmpScore = bestScore[i];
@@ -46,7 +48,7 @@ public class Ranking : MonoBehaviour
             }
         }
 
-        // Save updated scores and names
+       
         for (int i = 0; i < 5; i++)
         {
             PlayerPrefs.SetFloat(i + "BestScore", bestScore[i]);
@@ -58,5 +60,20 @@ public class Ranking : MonoBehaviour
     void Update()
     {
         // Optional: Add logic for real-time updates if needed
+    }
+    void showRankingFunction()
+    {
+        RankNameCurrent = PlayerPrefs.GetString("CurrentPlayerName");
+        RankScoreCurrent = string.Format("{0:N1}cm", PlayerPrefs.GetFloat("CurrentPlayerScore"));
+
+        for (int i = 0; i < 5; i++)
+        {
+            rankScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
+            RankScoreText[i].text = string.Format("{0:N1}cm", rnakScore[i]);
+            rankName[i] = PlayerPrefs.GetString(i.ToString() + "BestName");
+            RankNameText[i].text = string.Format(rankName[i]);
+
+
+        }
     }
 }
