@@ -17,6 +17,6 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     public void load()
     {
-        inputName.text = PlayerPrefs.GetString("Name");
+        name.text = PlayerPrefs.GetString("Name");
     }
 }
