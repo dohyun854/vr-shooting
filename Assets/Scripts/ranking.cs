@@ -7,8 +7,12 @@ public class Ranking : MonoBehaviour
 {
     private float[] bestScore = new float[5];
     private string[] bestName = new string[5];
-    public TMP_Text RankNameText;
-    public TMP_Text RankScoreText;
+    public TMP_Text[] RankNameText;
+    public TMP_Text[] RankScoreText;
+    public string RankNameCurrent;
+    public string RankScoreCurrent;
+    private string[] rankName=new string[5];
+    private float[] rankScore = new float[5];
 
     void Start()
     {
@@ -56,11 +60,7 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Optional: Add logic for real-time updates if needed
-    }
+    
     void showRankingFunction()
     {
         RankNameCurrent = PlayerPrefs.GetString("CurrentPlayerName");
@@ -69,7 +69,7 @@ public class Ranking : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             rankScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
-            RankScoreText[i].text = string.Format("{0:N1}cm", rnakScore[i]);
+            RankScoreText[i].text = string.Format("{0:N1}cm", rankScore[i]);
             rankName[i] = PlayerPrefs.GetString(i.ToString() + "BestName");
             RankNameText[i].text = string.Format(rankName[i]);
 
