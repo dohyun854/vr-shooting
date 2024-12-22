@@ -1,36 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ranking : MonoBehaviour
 {
-    private float[] bestScore = new float[5];
-    private string[] bestName = new string[5];
+    private float[] bestScore = { 100,40,30,20,10 };
+    private string[] bestName = { "±èÅÂÁ¤", "¾ÈÀ¯Âù", "±èµµÇö", "¼­¼º¿ø¼±»ý´Ô", "±è¾ÆÁø¼±»ý´Ô" };
+    public TMP_Text[] RankNameText;
+    public TMP_Text[] RankScoreText;
+    public string RankNameCurrent;
+    public string RankScoreCurrent;
+    private string[] rankName=new string[5];
+    private float[] rankScore = new float[5];
+    public string currentName;
+    public TMP_InputField inputinput;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Sample call to UpdateRanking for testing
-        UpdateRanking(100f, "Player1");
-    }
-
+    
     public void UpdateRanking(float currentScore, string currentName)
     {
-        // Save the current player's score and name
+        
         PlayerPrefs.SetString("CurrentPlayerName", currentName);
         PlayerPrefs.SetFloat("CurrentPlayerScore", currentScore);
 
-        float tmpScore;
-        string tmpName;
+        float tmpScore=0f;
+        string tmpName="";
 
         for (int i = 0; i < 5; i++)
         {
-            // Load existing scores and names
-            bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore", 0f);
-            bestName[i] = PlayerPrefs.GetString(i + "BestName", "");
+            
+            bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
+            bestName[i] = PlayerPrefs.GetString(i + "BestName");
 
-            // Update ranking if the current score is higher
-            if (bestScore[i] < currentScore)
+            
+            while(bestScore[i] < currentScore)
             {
                 tmpScore = bestScore[i];
                 tmpName = bestName[i];
@@ -46,7 +51,7 @@ public class Ranking : MonoBehaviour
             }
         }
 
-        // Save updated scores and names
+       
         for (int i = 0; i < 5; i++)
         {
             PlayerPrefs.SetFloat(i + "BestScore", bestScore[i]);
@@ -54,9 +59,26 @@ public class Ranking : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void showRankingFunction()
     {
-        // Optional: Add logic for real-time updates if needed
+        RankNameCurrent = PlayerPrefs.GetString("CurrentPlayerName");
+        RankScoreCurrent = string.Format("{0:N1}cm", PlayerPrefs.GetFloat("CurrentPlayerScore"));
+
+        for (int i = 0; i < 5; i++)
+        {
+            rankScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
+            RankScoreText[i].text = string.Format("{0:N1}cm", rankScore[i]);
+            rankName[i] = PlayerPrefs.GetString(i.ToString() + "BestName");
+            RankNameText[i].text = string.Format(rankName[i]);
+
+
+        }
+    }
+    public void Store(string inputName)
+    {
+        currentName = inputName;
+        UpdateRanking(170f, currentName);
+        showRankingFunction();
     }
 }
