@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ranking : MonoBehaviour
 {
-    private float[] bestScore = new float[5];
-    private string[] bestName = new string[5];
+    private float[] bestScore = { 100,40,30,20,10 };
+    private string[] bestName = { "±èÅÂÁ¤", "¾ÈÀ¯Âù", "±èµµÇö", "¼­¼º¿ø¼±»ý´Ô", "±è¾ÆÁø¼±»ý´Ô" };
     public TMP_Text[] RankNameText;
     public TMP_Text[] RankScoreText;
     public string RankNameCurrent;
     public string RankScoreCurrent;
     private string[] rankName=new string[5];
     private float[] rankScore = new float[5];
+    public string currentName;
+    public TMP_InputField inputinput;
 
-    void Start()
-    {
-        UpdateRanking(100f, "Player1");
-        showRankingFunction();
-    }
-
+    
     public void UpdateRanking(float currentScore, string currentName)
     {
         
@@ -75,5 +74,11 @@ public class Ranking : MonoBehaviour
 
 
         }
+    }
+    public void Store(string inputName)
+    {
+        currentName = inputName;
+        UpdateRanking(120f, currentName);
+        showRankingFunction();
     }
 }
