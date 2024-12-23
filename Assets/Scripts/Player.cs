@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player is dead!");
-        SceneManager.LoadScene("ranking");
+        SceneManager.LoadScene("RankingScene");
 
     }
 }
