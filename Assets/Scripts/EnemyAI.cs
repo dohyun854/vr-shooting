@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +13,9 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
     public int Score;
 
+    public int damagePerHit = 10;
+    public float attackInterval = 1.5f;
+    private Coroutine attackCoroutine;
 
     private void Start()
     {
@@ -67,22 +69,19 @@ public class Enemy : MonoBehaviour
         speed = 0;
         animator.SetTrigger("Die");
         Debug.Log("적 처치됨!");
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        StopAttacking();
         StartCoroutine(StopMovementAfterDie());
 
-
-        Destroy(gameObject, 5f);
         Score = PlayerPrefs.GetInt("Score");
         Score = Score + 1;
         PlayerPrefs.SetInt("Score", Score);
-
+        Destroy(gameObject, 5f);
     }
 
-    
-    
     private IEnumerator StopMovementAfterDie()
     {
-        yield return new WaitForSeconds(1f); // Die 애니메이션이 끝날 때까지 대기
-        // 적이 죽은 후 멈추도록 설정
+        yield return new WaitForSeconds(1f);
         transform.position = transform.position;
         transform.rotation = transform.rotation;
     }
@@ -117,6 +116,11 @@ public class Enemy : MonoBehaviour
                 {
                     animator.SetTrigger("Attack");
                 }
+
+                if (attackCoroutine == null)
+                {
+                    attackCoroutine = StartCoroutine(AttackPlayer());
+                }
             }
         }
         else
@@ -128,6 +132,33 @@ public class Enemy : MonoBehaviour
 
             Vector3 lookDirection = new Vector3(player.position.x - transform.position.x, 0, player.position.z - transform.position.z);
             transform.rotation = Quaternion.LookRotation(lookDirection);
+        }
+    }
+
+    private IEnumerator AttackPlayer()
+    {
+        while (isAttacking && !isDead)
+        {
+            Player playerScript = player.GetComponent<Player>();
+            if (playerScript != null)
+            {
+                playerScript.TakeDamage(damagePerHit);
+                Debug.Log("플레이어가 공격당했습니다! 남은 HP: " + playerScript.GetCurrentHp());
+            }
+
+            yield return new WaitForSeconds(attackInterval);
+        }
+
+        attackCoroutine = null;
+    }
+
+    private void StopAttacking()
+    {
+        isAttacking = false;
+        if (attackCoroutine != null)
+        {
+            StopCoroutine(attackCoroutine);
+            attackCoroutine = null;
         }
     }
 }

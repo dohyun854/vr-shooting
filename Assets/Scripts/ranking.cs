@@ -17,13 +17,11 @@ public class Ranking : MonoBehaviour
     private float[] rankScore = new float[5];
     public string currentName;
     public TMP_InputField inputinput;
+    public float currentScore = PlayerPrefs.GetFloat("Score");
 
     
     public void UpdateRanking(float currentScore, string currentName)
     {
-        
-        PlayerPrefs.SetString("CurrentPlayerName", currentName);
-        PlayerPrefs.SetFloat("CurrentPlayerScore", currentScore);
 
         float tmpScore=0f;
         string tmpName="";
@@ -34,7 +32,12 @@ public class Ranking : MonoBehaviour
             bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
             bestName[i] = PlayerPrefs.GetString(i + "BestName");
 
-            
+            if (bestScore[i] == currentScore)
+            {
+                currentScore = tmpScore;
+                currentName = tmpName;
+                break;
+            }
             while(bestScore[i] < currentScore)
             {
                 tmpScore = bestScore[i];
@@ -78,7 +81,7 @@ public class Ranking : MonoBehaviour
     public void Store(string inputName)
     {
         currentName = inputName;
-        UpdateRanking(170f, currentName);
+        UpdateRanking(currentScore, currentName);
         showRankingFunction();
     }
 }
