@@ -15,7 +15,7 @@ public class GaScore : MonoBehaviour
 
     public void GetScore()
     {
-        score += 1;
+        score += 100;
         SetText();
     }
 
