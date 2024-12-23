@@ -56,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(levelUpInterval);
             level++;
+            PlayerPrefs.SetInt("LEVEL", level);
 
             currentSpawnInterval = Mathf.Max(0.5f, currentSpawnInterval * spawnSpeedMultiplier);
             currentEnemySpeed *= enemySpeedMultiplier;
