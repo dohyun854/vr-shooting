@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class Enemy : MonoBehaviour
     public float maxHp = 1;
     private float currentHp;
     private bool isDead = false;
+    public int Score;
+
 
     private void Start()
     {
@@ -68,9 +71,14 @@ public class Enemy : MonoBehaviour
 
 
         Destroy(gameObject, 5f);
+        Score = PlayerPrefs.GetInt("Score");
+        Score = Score + 1;
+        PlayerPrefs.SetInt("Score", Score);
 
     }
 
+    
+    
     private IEnumerator StopMovementAfterDie()
     {
         yield return new WaitForSeconds(1f); // Die 애니메이션이 끝날 때까지 대기
