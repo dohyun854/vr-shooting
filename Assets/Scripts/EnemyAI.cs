@@ -4,7 +4,7 @@ using System.Collections;
 public class Enemy : MonoBehaviour
 {
     public float speed = 3f;
-    public Transform player; // 플레이어 오브젝트
+    public Transform player;
     public float attackDistance = 2f;
     private Animator animator;
     private bool isAttacking = false;
@@ -13,9 +13,9 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
     public int Score;
 
-    public int damagePerHit = 10; // 한 번 공격 시 플레이어가 받는 피해
-    public float attackInterval = 1.5f; // 공격 간격
-    private Coroutine attackCoroutine; // 플레이어 공격을 관리하는 Coroutine
+    public int damagePerHit = 10;
+    public float attackInterval = 1.5f;
+    private Coroutine attackCoroutine;
 
     private void Start()
     {
@@ -70,7 +70,7 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Die");
         Debug.Log("적 처치됨!");
         gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
-        StopAttacking(); // 공격 중단
+        StopAttacking();
         StartCoroutine(StopMovementAfterDie());
 
         Score = PlayerPrefs.GetInt("Score");
@@ -117,7 +117,6 @@ public class Enemy : MonoBehaviour
                     animator.SetTrigger("Attack");
                 }
 
-                // 플레이어 공격 Coroutine 시작
                 if (attackCoroutine == null)
                 {
                     attackCoroutine = StartCoroutine(AttackPlayer());
@@ -140,7 +139,6 @@ public class Enemy : MonoBehaviour
     {
         while (isAttacking && !isDead)
         {
-            // 플레이어 HP 감소
             Player playerScript = player.GetComponent<Player>();
             if (playerScript != null)
             {
@@ -148,11 +146,10 @@ public class Enemy : MonoBehaviour
                 Debug.Log("플레이어가 공격당했습니다! 남은 HP: " + playerScript.GetCurrentHp());
             }
 
-            // 공격 간격 대기
             yield return new WaitForSeconds(attackInterval);
         }
 
-        attackCoroutine = null; // Coroutine 종료
+        attackCoroutine = null;
     }
 
     private void StopAttacking()
