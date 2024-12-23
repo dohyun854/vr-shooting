@@ -16,10 +16,10 @@ public class SceneChanger : MonoBehaviour
 
     public void settingSceneChange()
     {
-        SceneManager.LoadScene("setting");
+        SceneManager.LoadScene("SettingScene");
     }
     public void GameOverSceneChange()
     {
-        SceneManager.LoadScene("ranking");
+        SceneManager.LoadScene("RankingScene");
     }
 }
