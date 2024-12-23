@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e2db9d46c6c924b70a036f4c9273f563
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - weaponBody: {fileID: 8772492614866008246, guid: 443575d8e96574921b459f7d9e49f35f, type: 3}
+  - frontGripAxis: {instanceID: 0}
+  - backGripAxis: {instanceID: 0}
+  - leftController: {fileID: 2593244646902954853, guid: b7718ca8459a34784a12245d30d01e1f, type: 3}
+  - rightController: {fileID: 3890983276428024626, guid: b6b7a872f16ce44f8b3add3bd80ce987, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
