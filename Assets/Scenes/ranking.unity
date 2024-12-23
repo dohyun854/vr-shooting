@@ -829,7 +829,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3231,9 +3231,10 @@ MonoBehaviour:
   - {fileID: 69420232}
   - {fileID: 1991150969}
   RankNameCurrent: 
-  RankScoreCurrent: 130
+  RankScoreCurrent: 
   currentName: 
   inputinput: {fileID: 1573896664}
+  currentScore: 0
 --- !u!1 &1715928301
 GameObject:
   m_ObjectHideFlags: 0
@@ -4177,7 +4178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: -249}
+  m_AnchoredPosition: {x: -298, y: -233}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1928768830
