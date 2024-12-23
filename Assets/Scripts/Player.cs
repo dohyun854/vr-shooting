@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int maxHp = 100; // 최대 HP
+    public int maxHp = 100;
     private int currentHp;
 
     private void Start()
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHp -= damage;
-        Debug.Log("플레이어 HP: " + currentHp);
+        Debug.Log("Player HP: " + currentHp);
 
         if (currentHp <= 0)
         {
@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("플레이어가 죽었습니다!");
-        // 사망 처리 (예: 게임 오버 화면 표시)
+        Debug.Log("Player is dead!");
     }
 }
