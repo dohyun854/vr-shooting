@@ -1,11 +1,10 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.SocialPlatforms.Impl;
 
 public class Enemy : MonoBehaviour
 {
     public float speed = 3f;
-    public Transform player;
+    public Transform player; // 플레이어 오브젝트
     public float attackDistance = 2f;
     private Animator animator;
     private bool isAttacking = false;
@@ -14,6 +13,9 @@ public class Enemy : MonoBehaviour
     private bool isDead = false;
     public int Score;
 
+    public int damagePerHit = 10; // 한 번 공격 시 플레이어가 받는 피해
+    public float attackInterval = 1.5f; // 공격 간격
+    private Coroutine attackCoroutine; // 플레이어 공격을 관리하는 Coroutine
 
     private void Start()
     {
@@ -67,22 +69,19 @@ public class Enemy : MonoBehaviour
         speed = 0;
         animator.SetTrigger("Die");
         Debug.Log("적 처치됨!");
+        gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
+        StopAttacking(); // 공격 중단
         StartCoroutine(StopMovementAfterDie());
 
-
-        Destroy(gameObject, 5f);
         Score = PlayerPrefs.GetInt("Score");
         Score = Score + 1;
         PlayerPrefs.SetInt("Score", Score);
-
+        Destroy(gameObject, 5f);
     }
 
-    
-    
     private IEnumerator StopMovementAfterDie()
     {
-        yield return new WaitForSeconds(1f); // Die 애니메이션이 끝날 때까지 대기
-        // 적이 죽은 후 멈추도록 설정
+        yield return new WaitForSeconds(1f);
         transform.position = transform.position;
         transform.rotation = transform.rotation;
     }
@@ -117,6 +116,12 @@ public class Enemy : MonoBehaviour
                 {
                     animator.SetTrigger("Attack");
                 }
+
+                // 플레이어 공격 Coroutine 시작
+                if (attackCoroutine == null)
+                {
+                    attackCoroutine = StartCoroutine(AttackPlayer());
+                }
             }
         }
         else
@@ -128,6 +133,35 @@ public class Enemy : MonoBehaviour
 
             Vector3 lookDirection = new Vector3(player.position.x - transform.position.x, 0, player.position.z - transform.position.z);
             transform.rotation = Quaternion.LookRotation(lookDirection);
+        }
+    }
+
+    private IEnumerator AttackPlayer()
+    {
+        while (isAttacking && !isDead)
+        {
+            // 플레이어 HP 감소
+            Player playerScript = player.GetComponent<Player>();
+            if (playerScript != null)
+            {
+                playerScript.TakeDamage(damagePerHit);
+                Debug.Log("플레이어가 공격당했습니다! 남은 HP: " + playerScript.GetCurrentHp());
+            }
+
+            // 공격 간격 대기
+            yield return new WaitForSeconds(attackInterval);
+        }
+
+        attackCoroutine = null; // Coroutine 종료
+    }
+
+    private void StopAttacking()
+    {
+        isAttacking = false;
+        if (attackCoroutine != null)
+        {
+            StopCoroutine(attackCoroutine);
+            attackCoroutine = null;
         }
     }
 }

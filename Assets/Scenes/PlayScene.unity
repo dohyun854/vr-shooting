@@ -946,6 +946,8 @@ MonoBehaviour:
   attackDistance: 2
   maxHp: 3
   Score: 0
+  damagePerHit: 10
+  attackInterval: 1.5
 --- !u!195 &551866552
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1000,8 +1002,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &551866561
-BoxCollider:
+--- !u!136 &551866558
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1018,9 +1020,11 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.77236396, y: 1.8318037, z: 0.5536545}
-  m_Center: {x: 0.0057755723, y: 0.9990338, z: 0.002313424}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &557953666 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6479137908180158667, guid: 99751e342d2047c45b560ff37530c059, type: 3}
@@ -1587,6 +1591,7 @@ GameObject:
   - component: {fileID: 879576321}
   - component: {fileID: 879576322}
   - component: {fileID: 879576323}
+  - component: {fileID: 879576324}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1804,6 +1809,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &879576324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879576316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8234b943b7d9f84193506663cdf20a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHp: 100
 --- !u!1 &898361361
 GameObject:
   m_ObjectHideFlags: 0
@@ -2472,7 +2490,7 @@ PrefabInstance:
       addedObject: {fileID: 551866557}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dca9613c24852c34e84231b9dedfd4da, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 551866561}
+      addedObject: {fileID: 551866558}
   m_SourcePrefab: {fileID: 100100000, guid: dca9613c24852c34e84231b9dedfd4da, type: 3}
 --- !u!1 &1541965254
 GameObject:
