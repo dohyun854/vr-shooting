@@ -65,6 +65,10 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Die");
         Debug.Log("적 처치됨!");
         StartCoroutine(StopMovementAfterDie());
+
+
+        Destroy(gameObject, 5f);
+
     }
 
     private IEnumerator StopMovementAfterDie()
