@@ -20,6 +20,6 @@ public class SceneChanger : MonoBehaviour
     }
     public void GameOverSceneChange()
     {
-        SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("ranking");
     }
 }
