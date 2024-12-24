@@ -6,10 +6,11 @@ using TMPro;
 public class GaScore : MonoBehaviour
 {
     public TMP_Text text;
-    public int score = 0;
+    public int score = 100;
 
     private void Start()
-    {
+    {   
+        score = 100;
         SetText();
     }
 
@@ -17,6 +18,7 @@ public class GaScore : MonoBehaviour
     {
         score += 100;
         SetText();
+        PlayerPrefs.SetInt("Score",score);
     }
 
     public void SetText()

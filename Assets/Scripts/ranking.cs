@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Ranking : MonoBehaviour
 {
     private float[] bestScore = { 100,40,30,20,10 };
-    private string[] bestName = { "������", "������", "�赵��", "������������", "�����������" };
+    private string[] bestName = { "김도현", "김태정", "안유찬", "서성원", "김아진" };
     public TMP_Text[] RankNameText;
     public TMP_Text[] RankScoreText;
     public string RankNameCurrent;
@@ -17,7 +17,7 @@ public class Ranking : MonoBehaviour
     private float[] rankScore = new float[5];
     public string currentName;
     public TMP_InputField inputinput;
-    public float currentScore = PlayerPrefs.GetFloat("Score");
+    public float currentScore = PlayerPrefs.GetInt("Score");
 
     
     public void UpdateRanking(float currentScore, string currentName)
@@ -32,13 +32,8 @@ public class Ranking : MonoBehaviour
             bestScore[i] = PlayerPrefs.GetFloat(i + "BestScore");
             bestName[i] = PlayerPrefs.GetString(i + "BestName");
 
-            if (bestScore[i] == currentScore)
-            {
-                currentScore = tmpScore;
-                currentName = tmpName;
-                break;
-            }
-            while(bestScore[i] < currentScore)
+            
+            while(bestScore[i] <= currentScore)
             {
                 tmpScore = bestScore[i];
                 tmpName = bestName[i];
