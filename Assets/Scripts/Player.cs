@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     {
         currentHp -= damage;
         PlayerPrefs.SetInt("HP",currentHp);
-        Debug.Log("Player HP: " + currentHp);
+        // Debug.Log("Player HP: " + currentHp);
 
         if (currentHp <= 0)
         {
@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Debug.Log("Player is dead!");
+        // Debug.Log("Player is dead!");
         SceneManager.LoadScene("RankingScene");
 
     }

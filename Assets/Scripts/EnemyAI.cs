@@ -74,10 +74,9 @@ public class Enemy : MonoBehaviour
         StopAttacking();
         StartCoroutine(StopMovementAfterDie());
 
-        
-        score.GetScore();
-        score.SetText();
-        Destroy(gameObject, 5f);
+        // score.GetScore();
+        // score.SetText();
+        Destroy(gameObject, 3f);
     }
 
     private IEnumerator StopMovementAfterDie()
@@ -144,7 +143,7 @@ public class Enemy : MonoBehaviour
             if (playerScript != null)
             {
                 playerScript.TakeDamage(damagePerHit);
-                Debug.Log("플레이어가 공격당했습니다! 남은 HP: " + playerScript.GetCurrentHp());
+                // Debug.Log("Player attacked! HP Left: " + playerScript.GetCurrentHp());
             }
 
             yield return new WaitForSeconds(attackInterval);
