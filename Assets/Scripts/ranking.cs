@@ -80,7 +80,7 @@ public class Ranking : MonoBehaviour
     {
         currentScore = PlayerPrefs.GetInt("Score");
         currentName = PlayerPrefs.GetString("Name");
-        UpdateRanking(30, currentName);
+        UpdateRanking(currentScore, currentName);
         showRankingFunction();
     }
     void Start(){

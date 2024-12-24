@@ -6,11 +6,11 @@ using TMPro;
 public class GaScore : MonoBehaviour
 {
     public TMP_Text text;
-    public int score = 100;
+    public int score = 200;
 
     private void Start()
     {   
-        score = 100;
+        score = 200;
         SetText();
     }
 
