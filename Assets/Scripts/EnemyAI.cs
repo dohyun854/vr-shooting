@@ -73,10 +73,10 @@ public class Enemy : MonoBehaviour
         gameObject.layer = LayerMask.NameToLayer("DeadEnemy");
         StopAttacking();
         StartCoroutine(StopMovementAfterDie());
-
-        // score.GetScore();
-        // score.SetText();
         Destroy(gameObject, 3f);
+        score.GetScore();
+        score.SetText();
+        
     }
 
     private IEnumerator StopMovementAfterDie()
