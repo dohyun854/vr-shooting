@@ -6,6 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public int maxHp = 1; // 최대 HP
     private int currentHp; // 현재 HP
+    
 
     void Start()
     {
@@ -38,5 +39,6 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("적 처치됨!");
         Destroy(gameObject);
+       
     }
 }

@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public int damagePerHit = 10;
     public float attackInterval = 1.5f;
     private Coroutine attackCoroutine;
+    GaScore score;
 
     private void Start()
     {
@@ -73,9 +74,9 @@ public class Enemy : MonoBehaviour
         StopAttacking();
         StartCoroutine(StopMovementAfterDie());
 
-        Score = PlayerPrefs.GetInt("Score");
-        Score = Score + 1;
-        PlayerPrefs.SetInt("Score", Score);
+        
+        score.GetScore();
+        score.SetText();
         Destroy(gameObject, 5f);
     }
 
