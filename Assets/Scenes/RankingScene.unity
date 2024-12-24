@@ -3659,7 +3659,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputName: {fileID: 0}
-  name: {fileID: 0}
 --- !u!114 &1334942653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3903,6 +3902,7 @@ GameObject:
   - component: {fileID: 1573896666}
   - component: {fileID: 1573896665}
   - component: {fileID: 1573896664}
+  - component: {fileID: 1573896670}
   - component: {fileID: 1573896668}
   m_Layer: 0
   m_Name: InputField (TMP)
@@ -3993,10 +3993,10 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1573896668}
-        m_TargetAssemblyTypeName: Ranking, Assembly-CSharp
-        m_MethodName: Store
-        m_Mode: 0
+      - m_Target: {fileID: 1573896670}
+        m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4005,18 +4005,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1573896668}
         m_TargetAssemblyTypeName: Ranking, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Store
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
@@ -4118,8 +4118,20 @@ MonoBehaviour:
   RankNameCurrent: 
   RankScoreCurrent: 
   currentName: 
-  inputinput: {fileID: 1573896664}
   currentScore: 0
+--- !u!114 &1573896670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573896662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa058b4f66845a478e4f31a1d76d9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputName: {fileID: 1573896664}
 --- !u!1 &1613712469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,7 +5245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputName: {fileID: 1573896664}
-  name: {fileID: 198574230}
 --- !u!114 &1822380066
 MonoBehaviour:
   m_ObjectHideFlags: 0
