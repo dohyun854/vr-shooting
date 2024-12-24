@@ -23,6 +23,7 @@ public class EnemySpawner : MonoBehaviour
         currentEnemySpeed = 1f;
         StartCoroutine(SpawnEnemy());
         StartCoroutine(LevelUp());
+        PlayerPrefs.SetInt("LEVEL",1);
     }
 
     private IEnumerator SpawnEnemy()
