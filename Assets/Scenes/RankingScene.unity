@@ -2887,6 +2887,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889f2d2d7f5790428e9fcf32ef69078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentName: {fileID: 0}
+  CurrentScore: {fileID: 0}
+  Pscore: 0
+  Pname: 
 --- !u!1 &965942999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3055,7 +3059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362, y: 281}
+  m_AnchoredPosition: {x: 385, y: 270}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184531637
@@ -3087,8 +3091,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3389,6 +3393,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7889f2d2d7f5790428e9fcf32ef69078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CurrentName: {fileID: 1805296137}
+  CurrentScore: {fileID: 1184531637}
+  Pscore: 0
+  Pname: 
 --- !u!1 &1252702112
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,6 +4072,7 @@ GameObject:
   - component: {fileID: 1573896666}
   - component: {fileID: 1573896665}
   - component: {fileID: 1573896664}
+  - component: {fileID: 1573896671}
   - component: {fileID: 1573896670}
   - component: {fileID: 1573896668}
   m_Layer: 0
@@ -4158,6 +4167,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1573896670}
         m_TargetAssemblyTypeName: NewBehaviourScript, Assembly-CSharp
         m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1573896671}
+        m_TargetAssemblyTypeName: showplayerNameandScore, Assembly-CSharp
+        m_MethodName: show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4294,6 +4315,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputName: {fileID: 1573896664}
+--- !u!114 &1573896671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573896662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7889f2d2d7f5790428e9fcf32ef69078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentName: {fileID: 1805296137}
+  CurrentScore: {fileID: 1184531637}
+  Pscore: 0
+  Pname: 
 --- !u!1 &1613712469
 GameObject:
   m_ObjectHideFlags: 0
@@ -5388,7 +5425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 289}
+  m_AnchoredPosition: {x: -13, y: 271}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1805296137
@@ -5413,15 +5450,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7e1f3b03a14ca04caf210fe0e445378, type: 2}
+  m_sharedMaterial: {fileID: -3514998734382443338, guid: f7e1f3b03a14ca04caf210fe0e445378, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

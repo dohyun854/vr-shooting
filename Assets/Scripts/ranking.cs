@@ -83,4 +83,7 @@ public class Ranking : MonoBehaviour
         UpdateRanking(30, currentName);
         showRankingFunction();
     }
+    void Start(){
+         showRankingFunction();   
+    }
 }
