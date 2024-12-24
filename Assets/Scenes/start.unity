@@ -369,8 +369,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "10705 \uAE40\uB3C4\uD604\n10709 \uAE40\uD0DC\uC815\n10915 \uC548\uC720\uCC2C"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f7e1f3b03a14ca04caf210fe0e445378, type: 2}
+  m_sharedMaterial: {fileID: -3514998734382443338, guid: f7e1f3b03a14ca04caf210fe0e445378, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
