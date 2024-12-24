@@ -15,8 +15,15 @@ public class showplayerNameandScore : MonoBehaviour
     public void show()
     {
         Pname=PlayerPrefs.GetString("Name");
-        Pscore=PlayerPrefs.GetInt("Score");
+        
         CurrentName.text=Pname;
+        
+    }
+    void Start(){
+        CurrentName.text="플레이어 이름";
+        Pscore=PlayerPrefs.GetInt("Score");
         CurrentScore.text=Pscore.ToString();
+          
+    
     }
 }

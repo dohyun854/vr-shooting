@@ -18,12 +18,12 @@ public class GaScore : MonoBehaviour
     {
         score += 100;
         SetText();
-        PlayerPrefs.SetInt("Score",score);
     }
 
     public void SetText()
     {
         text.text = "Score : " + score.ToString();
+        PlayerPrefs.SetInt("Score",score);
     }
 
 }
