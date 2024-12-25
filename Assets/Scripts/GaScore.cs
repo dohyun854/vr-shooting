@@ -3,14 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 public class GaScore : MonoBehaviour
 {
     public TMP_Text text;
-    public int score = 200;
+    public int score = 0;
+    public static Action plus;
 
+    private void Awake()
+    {
+        plus = () => { GetScore(); };
+    }
     private void Start()
     {   
-        score = 200;
         SetText();
     }
 

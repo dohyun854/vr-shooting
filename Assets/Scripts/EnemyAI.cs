@@ -18,7 +18,6 @@ public class Enemy : MonoBehaviour
     public int damagePerHit = 10;
     public float attackInterval = 1.5f;
     private Coroutine attackCoroutine;
-    GaScore score;
 
     private void Awake()
     {
@@ -81,11 +80,8 @@ public class Enemy : MonoBehaviour
         StopAttacking();
         StartCoroutine(StopMovementAfterDie());
         Destroy(gameObject, 3f);
-        audioSource.Play(); 
-
-
-        //score.GetScore();
-        //score.SetText();
+        audioSource.Play();
+        GaScore.plus();
         
     }
     
