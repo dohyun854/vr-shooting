@@ -3363,11 +3363,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1800574157}
         m_TargetAssemblyTypeName: toggle, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: Off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3383,9 +3383,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1800574154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8aabf8c6173f79f4a8cad34b082727ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 66752779b8835d74ab56d7f4e95a2471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  masterMixer: {fileID: 0}
 --- !u!1 &1827516060
 GameObject:
   m_ObjectHideFlags: 0
