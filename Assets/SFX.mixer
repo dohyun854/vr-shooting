@@ -52,7 +52,7 @@ AudioMixerController:
   - guid: 340d6248c21bcda4e82b796837edde27
     name: MyExposedParam
   - guid: ed93e4e6d4e8ce441b1ec8fe10f2b825
-    name: Gun
+    name: Die
   - guid: f684077266ab0634ea0848d03ef063a2
     name: MyExposedParam 1
   - guid: 40a2b3ca71ff28e43b3f9f7713d0c006

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class Enemy : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     public int Score;
     private AudioSource audioSource;
     public AudioClip dieSound; 
+    public AudioMixer audioMixer;
 
     public int damagePerHit = 10;
     public float attackInterval = 1.5f;
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = dieSound;
+        audioSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Die")[0];
     }
     private void Start()
     {

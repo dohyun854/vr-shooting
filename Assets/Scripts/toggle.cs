@@ -13,15 +13,22 @@ public class toggle : MonoBehaviour
     // Start is called before the first frame update
     public void OnOff()
     {
+        number = PlayerPrefs.GetInt("number");
+        number += 1;
+
         if (number % 2 == 0)
         {
-            masterMixer.SetFloat("BGM", 0);
+            masterMixer.SetFloat("Die", 0);
+            masterMixer.SetFloat("Gun", 0);
+            PlayerPrefs.SetFloat("SFX", 0);
         }
         else
         {
-            masterMixer.SetFloat("BGM", -80);
+            masterMixer.SetFloat("Die", -80);
+            masterMixer.SetFloat("Gun", -80);
+            PlayerPrefs.SetFloat("SFX", -80);
         }
-        number += 1;
+        PlayerPrefs.SetInt("number", number);
 
 
     }

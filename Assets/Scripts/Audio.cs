@@ -16,9 +16,16 @@ public class Audio : MonoBehaviour
     {
         float sound = audioSlider.value;
 
-        if(sound==-40f) masterMixer.SetFloat("BGM",-80);
-        else masterMixer.SetFloat("BGM",sound);
-        
+        if (sound == -40f)
+        {
+            masterMixer.SetFloat("BGM", -80);
+            PlayerPrefs.SetFloat("Volume", sound);
+        }
+        else
+        {
+            masterMixer.SetFloat("BGM", sound);
+            PlayerPrefs.SetFloat("Volume", sound);
+        }
         
     }
 }

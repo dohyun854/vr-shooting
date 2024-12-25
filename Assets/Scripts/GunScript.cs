@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem;
 
 public class GunScript : MonoBehaviour
@@ -13,11 +14,13 @@ public class GunScript : MonoBehaviour
     private AudioSource audioSource;
     private InputAction fireActionRight;
     private InputAction fireActionLeft;
+    public AudioMixer audioMixer;
 
     private void Awake()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = shootingSound;
+        audioSource.outputAudioMixerGroup = audioMixer.FindMatchingGroups("Gun")[0];
     }
 
     private void OnEnable()
