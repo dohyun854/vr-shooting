@@ -12,12 +12,19 @@ public class Enemy : MonoBehaviour
     private float currentHp;
     private bool isDead = false;
     public int Score;
+    private AudioSource audioSource;
+    public AudioClip dieSound; 
 
     public int damagePerHit = 10;
     public float attackInterval = 1.5f;
     private Coroutine attackCoroutine;
     GaScore score;
 
+    private void Awake()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = dieSound;
+    }
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -74,10 +81,14 @@ public class Enemy : MonoBehaviour
         StopAttacking();
         StartCoroutine(StopMovementAfterDie());
         Destroy(gameObject, 3f);
-        score.GetScore();
-        score.SetText();
+        audioSource.Play(); 
+
+
+        //score.GetScore();
+        //score.SetText();
         
     }
+    
 
     private IEnumerator StopMovementAfterDie()
     {
